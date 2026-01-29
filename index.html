@@ -33,6 +33,14 @@
   <h2>Localisation</h2>
   <div class="map-container">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.143!2d-17.31325!3d14.7275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec54a8c8c8c8c8c9%3A0x0!2sSipress%205%20Grand%20Mbao!5e0!3m2!1sfr!2ssn!4v1705158000000" width="100%" height="450" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="directions" style="margin-top:10px; display:flex; align-items:center; gap:10px;">
+      <button id="getDirectionsBtn" class="btn btn-primary">Obtenir l'itinéraire</button>
+      <a id="directionsLink" data-place-id="" href="https://www.google.com/maps/dir/?api=1&destination=14.7275,-17.31325&travelmode=driving" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+      <span id="directionsStatus" style="margin-left:6px;color:#555;font-size:0.95rem;display:flex;align-items:center;gap:6px">
+        <span id="directionsText"></span>
+        <span id="directionsSpinner" class="spinner" style="display:none" aria-hidden="true"></span>
+      </span>
+    </div>
   </div>
 </section>
 
@@ -78,7 +86,7 @@
   <img src="assets/images/galerie/photo1.jpeg" alt="Lala & Djily">
 </div>
 
-<audio autoplay loop controls>
+<audio id="siteAudio" autoplay muted loop controls>
   <source src="assets/music.mp3">
 </audio>
 
