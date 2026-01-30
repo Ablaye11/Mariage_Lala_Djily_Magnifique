@@ -9,6 +9,12 @@ e.preventDefault();
 const nom=document.getElementById('nom').value;
 const tel=document.getElementById('telephone').value;
 const presence=document.getElementById('presence').value;
+const recipient=document.getElementById('recipient').value;
+
+if(!recipient){
+  alert('Veuillez sélectionner un destinataire');
+  return;
+}
 
 let message;
 if(presence==='Oui'){
@@ -17,7 +23,7 @@ message=`Bonjour,%0AJe m'appelle ${nom}%0ATéléphone: ${tel}%0AOui, je vais êt
 message=`Bonjour,%0AJe m'appelle ${nom}%0ATéléphone: ${tel}%0ANon, j'ai un empêchement et je ne pourrai pas être présent.%0A%0A📍 Localisation:%0Ahttps://maps.google.com/maps/place/14°43'39.0"N+17°18'47.7"W`;
 }
 
-const whatsappUrl=`https://wa.me/221763625243?text=${message}`;
+const whatsappUrl=`https://wa.me/${recipient}?text=${message}`;
 // jouer un son de confirmation (Web Audio) puis ouvrir WhatsApp
 if (typeof playClick === 'function') playClick();
 setTimeout(function(){
